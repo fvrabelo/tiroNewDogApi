@@ -17,6 +17,7 @@ const [items, setItems] = useState([])
         );
         const data = await res.json();
         setItems(data)
+        
       }
       getBreeds()
     }, [])
@@ -44,33 +45,35 @@ function getImage(imageId) {
              "maxWidth":"100%",
              "maxHeight":"100%"}}>
 
-            <h6 className="card-subtitle mb-2 text-muted text-center"  style={{"marginTop":"5px"}}>Raça</h6>
+            <h6 className="card-subtitle mb-2 text-muted text-center"  style={{"marginTop":"5px"}}>Breed name</h6>
             <h5 className="card-title text-center">{items.name}</h5>
             
-            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Propósito</h6>
+            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Bred for</h6>
             <h5 className="card-title text-center">{items.bred_for}</h5>
             
-            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Grupo</h6>
+            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Group</h6>
             <h5 className="card-title text-center">{items.breed_group}</h5>
             
-            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Temperamento</h6>
+            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Temperament</h6>
             <h5 className="card-title text-center">{items.temperament}</h5>
             
-            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Tempo de vida</h6>
+            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Life span</h6>
             <h5 className="card-title text-center">{items.life_span}</h5>
-            {console.log(items.height)}
-            Altura 
-            <h3>{items.height.metric}</h3>
-            {/*
-            {console.log(items.weight)}
-            Peso kg
-            <h3>{items.weight.metric}</h3> */}
+            
+            {/* <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Height</h6>
+            <h5 className="card-title text-center">{items.height.metric}</h5>
+
+            <h6 className="card-subtitle mb-2 text-muted text-center" style={{"marginTop":"5px"}}>Weight</h6>
+            <h5 className="card-title text-center">{items.weight.metric}</h5> */}
+
 
             <img className ="image" 
             src={getImage(items.reference_image_id) }
             style={{ "maxHeight": "300px", "maxWidth": "300px", "marginBottom":"15px" }}/>
+
+
             
-            <Link to="/" className="btn btn-primary">Escolher outra raça</Link>
+            <Link to="/" className="btn btn-primary">Home</Link>
             
 
         </div>
